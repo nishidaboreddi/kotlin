@@ -1,0 +1,20 @@
+fun calSum(numbers : Array<Int>, i:Int=0): Int
+{
+    if(i==numbers.size) return 0
+    else
+    {
+        return numbers[i]+calSum(numbers,i+1)
+    }
+}
+
+fun main() {
+    /*
+    println("Enter numbers separated by spaces:")
+    val input = readLine() // Read input as a string
+    val numbers = input!!.split(" ").map { it.toInt() }.toIntArray() // Convert to IntArray
+    println("You entered: ${numbers.joinToString(", ")}")
+     */
+    val numbers=arrayOf(1,2,3,4,5)
+    val sum=calSum(numbers)
+    print("Sum=$sum")
+}
