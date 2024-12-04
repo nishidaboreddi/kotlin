@@ -1,0 +1,19 @@
+fun calPower(base : Int , exp : Int): Int
+{
+    fun calSquare():Int{
+        return (base*base)
+    }
+    return calSquare()
+}
+
+/*This feature is often used to improve code organization, 
+ encapsulate logic, and avoid polluting the outer scope with helper 
+ functions that are not needed elsewhere.
+ */
+fun main() {
+println("Enter base and exp:")
+    val base=readln().toInt()
+    val exp=readln().toInt()
+    val square=calPower(base,exp)
+    println("Square of $base = $square")
+}
