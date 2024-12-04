@@ -1,0 +1,29 @@
+fun pascal(rows : Int)
+{
+    require(rows>0){"Rows must be greater than zero!!!"}
+    var prevRow=mutableListOf(1)
+    println(prevRow.joinToString(" "))
+
+    for (curRow in 1 until rows)
+    {
+        val nextRow=mutableListOf(1)
+        //nextRow.add(1)
+        for (i in 1 until curRow)
+        {
+            val sum=prevRow[i-1]+prevRow[i]
+            nextRow.add(sum)
+        }
+        nextRow.add(1)
+        println(nextRow.joinToString(" "))
+        prevRow=nextRow
+
+    }
+}
+
+
+fun main()
+{
+    println("Enter no.of rows:")
+    var rows=readln().toInt()
+    pascal(rows)
+}
