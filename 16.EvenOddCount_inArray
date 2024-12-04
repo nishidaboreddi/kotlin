@@ -1,0 +1,31 @@
+fun main()
+{
+    print("Enter numbers(press -0 if you want to stop):")
+    var num=readLine()!!.toInt()
+    var char=num.toChar()
+    var numbers=mutableListOf(num)
+    while(num!=-0)
+    {
+         num=readln().toInt()
+        if(num!=-0) {
+            numbers.add(num)
+        }
+    }
+    println(numbers)
+
+    var evenCount=0
+    var oddCount=0
+    for ( i in 0 until numbers.size)
+    {
+        if(numbers[i]%2==0)
+        {
+            evenCount++
+        }
+        else
+        {
+            oddCount++
+        }
+    }
+    println()
+    print("Even count=$evenCount \n oddCount=$oddCount")
+}
