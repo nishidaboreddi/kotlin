@@ -1,0 +1,189 @@
+fun <T>swap(numbers : Array<T>)
+{
+    require(numbers.size==2){" you should give exactly 2 numbers!!"}
+    println("Before Swapping: ${numbers[0]}, ${numbers[1]}")
+    val temp=numbers[0]
+    numbers[0] = numbers[1]
+    numbers[1] = temp
+    println("After Swapping: ${numbers[0]}, ${numbers[1]}")
+}
+
+fun <T : Number> calculateSeriesSum(firstTerm: T, commonDiffRatio: T, numTerms: Int): Double {
+    require(numTerms > 0) { "Number of terms must be greater than 0." }
+
+    val a = firstTerm.toDouble()
+    val n = numTerms.toDouble()
+
+    return when (commonDiffRatio) {
+        is Double -> {
+            val r = commonDiffRatio
+            if (r == 1.0) {
+                a * n
+            } else {
+                a * (1 - Math.pow(r, n)) / (1 - r)
+            }
+        }
+        is Int -> {
+            val d = commonDiffRatio
+            if (d == 0) {
+                a * n
+            } else {
+                (n / 2) * (2 * a + (n - 1) * d)
+            }
+        }
+        else -> throw IllegalArgumentException("Unsupported data type for common difference/ratio.")
+    }
+}
+
+fun main() {
+    val numbers=arrayOf(2,3)
+    swap(numbers)
+    val string=arrayOf("hello","world")
+    swap(string)
+
+    val mixed=arrayOf(1,"nishi")
+    swap(mixed)
+
+    val arithmeticSum = calculateSeriesSum(2, 3, 5)
+    println("Arithmetic Sum: $arithmeticSum")
+
+    val geometricSum = calculateSeriesSum(2.0, 3.0, 5)
+    println("Geometric Sum: $geometricSum")
+}
+
+/*
+
+1. Definition and Syntax:
+In Kotlin, generic functions are functions that can operate on different
+types without being limited to a specific type. They achieve this by using
+type parameters, which are placeholders for types provided when the function
+is called. This feature is part of Kotlin's support for generics, which
+enhances code reusability and type safety.
+
+-> A generic function is defined with a type parameter, indicated
+by a name inside angle brackets (<>) placed before the function name.
+
+<code>
+fun <T> functionName(param: T): T {
+    // Function body
+    return param
+}
+
+-> T is a placeholder for a type.
+The actual type is determined when the function is called.
+
+
+2. Example of a Generic Function
+<code>
+fun <T> display(item: T) {
+    println("Item: $item")
+}
+
+fun main() {
+    display(42)          // T is inferred as Int
+    display("Hello")     // T is inferred as String
+    display(3.14)        // T is inferred as Double
+}
+
+3. Characteristics of Generic Functions
+-> Type Parameter: Declared using <T>, where T is a name
+conventionally used for "Type". You can use other names
+like <E>, <K, V>, etc.
+-> Type Inference: Kotlin often infers the type automatically
+based on the arguments provided.
+-> Reusability: Generic functions work with any type, making them reusable
+across multiple scenarios.
+
+4. Multiple Type Parameters
+
+<code>
+fun <K, V> pair(key: K, value: V): Pair<K, V> {
+    return Pair(key, value)
+}
+
+fun main() {
+    val intStringPair = pair(1, "One") // K is Int, V is String
+    val stringDoublePair = pair("PI", 3.14) // K is String, V is Double
+
+    println(intStringPair) // Output: (1, One)
+    println(stringDoublePair) // Output: (PI, 3.14)
+}
+
+5. Using Type Constraints
+
+<code>
+fun <T : Comparable<T>> maxOf(a: T, b: T): T {
+    return if (a > b) a else b
+}
+
+fun main() {
+    println(maxOf(10, 20))       // Output: 20
+    println(maxOf("Apple", "Banana")) // Output: Banana
+}
+
+
+6. Generic Functions with Collections
+
+<code>
+fun <T> printList(items: List<T>) {
+    for (item in items) {
+        println(item)
+    }
+}
+
+fun main() {
+    val intList = listOf(1, 2, 3)
+    val stringList = listOf("A", "B", "C")
+
+    printList(intList)    // T is inferred as Int
+    printList(stringList) // T is inferred as String
+}
+
+
+7. Extension Functions with Generics
+
+<code>
+fun <T> List<T>.secondOrNull(): T? {
+    return if (this.size >= 2) this[1] else null
+}
+
+fun main() {
+    val numbers = listOf(10, 20, 30)
+    val strings = listOf("Kotlin")
+
+    println(numbers.secondOrNull()) // Output: 20
+    println(strings.secondOrNull()) // Output: null
+}
+
+
+8. Inline Generic Functions
+
+<code>
+inline fun <reified T> isTypeOf(value: Any): Boolean {
+    return value is T
+}
+
+fun main() {
+    println(isTypeOf<String>("Hello")) // Output: true
+    println(isTypeOf<Int>("Hello"))    // Output: false
+}
+
+
+9.Example: Combining Generics and Constraints
+
+<code>
+fun <T : Number> sumOfElements(numbers: List<T>): Double {
+    return numbers.sumOf { it.toDouble() }
+}
+
+fun main() {
+    val intList = listOf(1, 2, 3)
+    val doubleList = listOf(1.1, 2.2, 3.3)
+
+    println(sumOfElements(intList))   // Output: 6.0
+    println(sumOfElements(doubleList)) // Output: 6.6
+}
+
+
+ */
+
