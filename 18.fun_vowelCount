@@ -1,0 +1,20 @@
+fun vowels(input : String) : Int{
+    var count=0
+    for (i in 0 until input.length)
+    {
+        var char=input[i].lowercaseChar()
+        if(listOf('a','e','i','o','u').contains(char))
+        {
+            count++
+        }
+    }
+
+    return count
+}
+
+fun main() {
+    print("Enter a String to count vowels in it:")
+    val input=readln()
+    val VowelCount=vowels(input)
+    println("No.of vowels in $input= $VowelCount")
+}
