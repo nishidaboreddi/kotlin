@@ -1,0 +1,9 @@
+import java.util.Date
+import java.text.SimpleDateFormat
+
+fun main() {
+   val date=Date()
+    val formatDate=SimpleDateFormat("dd-MM-yyyy HH:mm:ss")
+    val formatted=formatDate.format(date)
+    println(formatted)
+}
