@@ -1,0 +1,16 @@
+fun main() {
+    print("Enter any character :")
+    val input=readln()//.toLowerCase()
+
+    if(input.length==1)
+    {
+        val char=input[0].lowercaseChar()
+     if(listOf('a','e','i','o','u').contains(char)) {
+         println("$char is a vowel letter")
+     }
+     else
+     {
+         println("$char is not a vowel letter")
+     }
+    }
+}
