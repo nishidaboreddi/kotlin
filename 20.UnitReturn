@@ -1,0 +1,27 @@
+fun main() {
+
+    // example of unit
+    val result: Unit = println("This is a Unit example")
+    println(result)
+
+    println()
+
+        // Example 1: Implicit Unit
+        fun greet(name: String) {
+            println("Hello, $name!")
+        }
+
+        // Example 2: Explicit Unit
+        fun logMessage(message: String): Unit {
+            println("Log: $message")
+        }
+
+        // Example 3: Using Unit with Lambdas
+        val logger: (String) -> Unit = { msg -> println("Logged: $msg") }
+
+        greet("Alice")
+        logMessage("This is a log entry.")
+        logger("Lambda logging example")
+
+
+}
