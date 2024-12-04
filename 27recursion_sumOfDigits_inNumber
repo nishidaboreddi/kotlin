@@ -7,7 +7,7 @@ fun sumOfDigits(num : Int): Int
     }
     val digit=num%10
     val updatedNum=num/10
-    return num+sumOfDigits(updatedNum)
+    return digit+sumOfDigits(updatedNum)
 }
 
 fun main() {
