@@ -1,0 +1,14 @@
+fun calPower(base :Int,exp : Int): Int
+{
+    require(base>0){"base must be greater than zero!!"}
+    if(exp==0) return 1
+    else return base*calPower(base,exp-1)
+}
+
+fun main() {
+    print("Enter base and Exponent :")
+    val base=readln().toInt()
+    val exp=readln().toInt()
+    val value=calPower(base,exp)
+    println("The value of $base^$exp = $value")
+}
