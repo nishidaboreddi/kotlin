@@ -1,0 +1,50 @@
+//example infix function
+
+class Permissions {
+    private val roles = mutableListOf<String>()
+
+    infix fun addRole(role: String) {
+        roles.add(role)
+    }
+
+    infix fun hasRole(role: String): Boolean {
+        return role in roles
+    }
+
+    fun listRoles() = roles
+}
+
+
+// extensible infix function
+
+infix fun String.concat(other: String): String {
+    return this + other
+}
+
+infix fun Int.isDivisibleBy(divisor: Int): Boolean {
+    return this % divisor == 0
+}
+
+fun main() {
+    val userPermissions = Permissions()
+
+    // Adding roles using infix notation
+    userPermissions addRole "Admin"
+    userPermissions addRole "Editor"
+
+    // Checking roles using infix notation
+    println(userPermissions hasRole "Admin") // Output: true
+    println(userPermissions hasRole "Viewer") // Output: false
+
+    // Listing all roles
+    println(userPermissions.listRoles()) // Output: [Admin, Editor]
+
+    val result = "Hello" concat " World"
+    println(result) // hello world
+
+    val number1 = 15
+    val number2 = 3
+
+    println("$number1 is divisible by $number2: ${number1.isDivisibleBy(number2)}")
+    println("$number2 is divisible by $number1: ${number2.isDivisibleBy(number1)}")
+}
