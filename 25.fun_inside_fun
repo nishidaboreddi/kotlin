@@ -1,19 +1,18 @@
-fun calPower(base : Int , exp : Int): Int
-{
-    fun calSquare():Int{
-        return (base*base)
+fun calculate(a: Int, b: Int): Int {
+    // Local function to compute the sum
+    fun add(x: Int, y: Int): Int {
+        return x + y
     }
-    return calSquare()
+
+    // Local function to compute the difference
+    fun subtract(x: Int, y: Int): Int {
+        return x - y
+    }
+
+    return if (a > b) add(a, b) else subtract(a, b)
 }
 
-/*This feature is often used to improve code organization, 
- encapsulate logic, and avoid polluting the outer scope with helper 
- functions that are not needed elsewhere.
- */
 fun main() {
-println("Enter base and exp:")
-    val base=readln().toInt()
-    val exp=readln().toInt()
-    val square=calPower(base,exp)
-    println("Square of $base = $square")
+    println(calculate(10, 5)) // Output: 15
+    println(calculate(3, 7))  // Output: -4
 }
