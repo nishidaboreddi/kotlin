@@ -1,0 +1,26 @@
+fun main() {
+    var fact=1
+    print("Enter a value to find factorial:")
+    var num=readln().toInt()
+    if(num<0)
+    {
+        println("No factorial for negative numbers!!!!\nPlease try again!!!")
+    }
+    else if(num==1 || num==0)
+    {
+        println("Factorial of $num is 1")
+    }
+    else if(num>1)
+    {
+        for (i in num downTo 1)
+        {
+            fact*=i
+        }
+        println("Factorial of $num is $fact")
+    }
+    else
+    {
+        println("Error!!!!!!!!!1")
+    }
+
+}
