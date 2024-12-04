@@ -1,0 +1,15 @@
+fun main(args:Array<String>) {
+    println("Enter your name: ")
+    var name=readLine()
+    println(name)
+    if(args.isNotEmpty())
+    {
+        var name1=args[0] // if it is like Main.kt nishida
+        // output will be Nishida
+        println(name1)
+    }
+    else
+    {
+        println("Error!!")
+    }
+}
