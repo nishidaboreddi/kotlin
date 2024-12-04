@@ -1,0 +1,39 @@
+fun main() {
+    println("Enter 1 to find Circumstance of Circle:")
+    println("Enter 2 to find Area of Circle:")
+    println("Enter 3 to find both Area and Perimeter of Circle:")
+    print("Enter your option:")
+    val op=readln().toInt()
+    print("Enter radius of Circle:")
+    val radius=readln().toDouble()
+    when(op)
+    {
+        1-> {
+            val area=Area(radius)
+            println("Area of Circle=$area")
+        }
+        2-> {
+            val perimeter=Perimeter(radius)
+            println("Perimeter of Area=$perimeter")
+        }
+        3-> {
+            val area=Area(radius)
+            val perimeter=Perimeter(radius)
+            println("Area of circle=$area")
+            println("Perimeter of Circle=$perimeter")
+
+        }
+        else-> println("Invalid Option")
+    }
+
+}
+
+fun Area(radius : Double): Double
+{
+   return Math.PI * radius * radius
+}
+
+fun Perimeter(radius : Double): Double
+{
+   return Math.PI * 2.0 * radius // or   import kotlin.math.PI
+}
