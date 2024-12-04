@@ -1,0 +1,13 @@
+fun calculateAvg(vararg numbers: Double) : Double
+{
+    val sum=numbers.sum()
+    return sum/numbers.size
+}
+
+fun main() {
+    val avg1=calculateAvg(1.0,2.0,3.0,4.0,5.0)
+    println("avg1=$avg1")
+
+    val avg2=calculateAvg(-1.0,-10.0,34.0,43.0,-23.0)
+    println("avg2=$avg2")
+}
