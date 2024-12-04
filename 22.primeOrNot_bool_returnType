@@ -1,0 +1,22 @@
+fun prime(num : Int): Boolean
+{
+    if(num<=1)
+    {
+        return false
+    }
+    for(i in 2 until num)
+    {
+        if(num%i==0)
+        {
+            return false
+        }
+    }
+    return true
+}
+
+fun main() {
+    print("Enter any number:")
+    val num=readln().toInt()
+    val status=prime(num)
+    println("Is $num prime? : $status")
+}
