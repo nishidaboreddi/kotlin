@@ -1,0 +1,62 @@
+fun main() {
+    println("Enter your choice:")
+    println("Enter 1 for ADDITION:")
+    println("Enter 2 for SUBTRACTION:")
+    println("Enter 3 for MULTILICATION:")
+    println("Enter 4 for DIVISION:")
+    println("Enter 5 for MODULUS:")
+    println("Enter your option:")
+    var op=readLine()?.toIntOrNull()
+
+
+    println("Enter Values of Number1 and Number2:")
+    var num1= readln().toDouble()
+    var num2= readln().toDouble()
+   // var num3= readln()?.toDoubleOrNull()
+    //var num4=readLine()?.toDoubleOrNull()
+    when(op)
+    {
+        1-> println("Sum of $num1 and $num2 = ${num1 + num2}")
+        2-> println("Subtraction of $num1 and $num2 = ${num2 - num2}")
+        3-> println("Multiplication of $num1 and $num2 = ${num2 * num2}")
+        4-> println("Division of $num1 and $num2 = ${num2 / num2}")
+        5-> println("Modulus of $num1 and $num2 = ${num2 % num2}")
+        else->println("Invalid input")
+    }
+
+
+    // 2nd method in case of null
+
+    println("Enter your choice:")
+    println("Enter 1 for ADDITION:")
+    println("Enter 2 for SUBTRACTION:")
+    println("Enter 3 for MULTILICATION:")
+    println("Enter 4 for DIVISION:")
+    println("Enter 5 for MODULUS:")
+    println("Enter your option:")
+    var op2=readLine()?.toIntOrNull()
+    println("Enter Values of Number3 and Number4:")
+    var num3= readln()?.toDoubleOrNull()
+    var num4=readln()?.toDoubleOrNull()
+    when(op2)
+    {
+        1-> if (num3!= null) {
+            println("Sum of $num3 and $num4 = ${num3 + num4!!}")
+        }
+        2-> if (num3 != null) {
+            println("Subtraction of $num3 and $num4 = ${num3 - num4!!}")
+        }
+        3-> if (num3 != null) {
+            println("Multiplication of $num3 and $num4 = ${num3 * num4!!}")
+        }
+        4-> if (num3 != null) {
+            println("Division of $num3 and $num4 = ${num3 / num4!!}")
+        }
+        5-> if (num3 != null) {
+            println("Modulus of $num3 and $num4 = ${num3 % num4!!}")
+        }
+        else->println("Invalid input")
+    }
+
+
+}
