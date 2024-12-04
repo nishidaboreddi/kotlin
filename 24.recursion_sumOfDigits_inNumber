@@ -1,0 +1,18 @@
+fun sumOfDigits(num : Int): Int
+{
+    require(num>0){"Number must be postive"}
+    if(num<10)
+    {
+        return num
+    }
+    val digit=num%10
+    val updatedNum=num/10
+    return num+sumOfDigits(updatedNum)
+}
+
+fun main() {
+    print("Enter a positive number :")
+    val num=readln().toInt()
+    val sum=sumOfDigits(num)
+    println("Sum of digits in $num= $sum")
+}
