@@ -1,0 +1,19 @@
+fun main()
+{
+    print("Enter fibonacci series upto number:")
+    val num=readln().toInt()
+    println("Fibonacci series upto $num:")
+    var num1=0
+    var num2=1
+    print("$num1,$num2")
+    while(num2<=num)
+    {
+        var temp=num1+num2
+        if(temp<=num)
+        {
+            print(",$temp")
+        }
+        num1=num2
+        num2=temp
+    }
+}
