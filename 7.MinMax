@@ -1,0 +1,30 @@
+fun main() {
+    println("Enter number of number:")
+    var count=readln().toInt()
+   val numbers=mutableListOf<Int>()
+    println("Enter $count numbers:")
+    for(i in 0 until count) {
+        var num=readln().toInt()
+        numbers.add(num)
+    }
+    var max=numbers[0]
+    var min=numbers[0]
+
+    for(i in 0 until count)
+    {
+            if (numbers[i]>max)
+            {
+                max=numbers[i]
+            }
+    }
+    println("max: $max")
+
+    for( i in 0 until count)
+    {
+        if (numbers[i]<min)
+        {
+            min=numbers[i]
+        }
+    }
+    println("min: $min")
+}
