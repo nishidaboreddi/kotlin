@@ -1,0 +1,4 @@
+fun main() {
+    val kotlinVersion=KotlinVersion.CURRENT
+    println("Kotlin version=$kotlinVersion")
+}
