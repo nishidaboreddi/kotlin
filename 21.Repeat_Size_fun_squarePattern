@@ -1,0 +1,8 @@
+fun squarePattern(rows : Int)=repeat(rows){println("* ".repeat(rows))}
+
+fun main() {
+    print("Enter no.of rows:")
+    val rows=readln().toInt()
+    squarePattern(rows)
+
+}
