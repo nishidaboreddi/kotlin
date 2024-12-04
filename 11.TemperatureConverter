@@ -1,0 +1,35 @@
+fun main() {
+    println("Enter 1 to Convert from Celsius to Fahrenheit")
+    println("Enter 2 to Convert from Fahrenheit to Celsius")
+    print("Enter your Option:")
+
+    val op=readln().toInt()
+    when(op)
+    {
+        1-> {
+            print("Enter Temperature in Celsius:")
+            val temperature=readln().toDouble()
+            val fahrenheit=celsiusToFahrenheit(temperature)
+            println("Temperature in Fahrenheit= $fahrenheit")
+        }
+        2-> {
+            print("Enter temperature in Fahrenheit:")
+            val temperature=readln().toDouble()
+            val celsius=fahrenheitToCelsius(temperature)
+            println("Temperature in Celsius= $celsius")
+        }
+        else-> {
+            print("Invalid input!!!")
+        }
+    }
+}
+
+fun celsiusToFahrenheit(temperature : Double) : Double
+{
+    return (temperature * (9/5)) + 32.0
+}
+
+fun fahrenheitToCelsius(temperature : Double ) : Double
+{
+    return (temperature - 32.0) * 5/9
+}
