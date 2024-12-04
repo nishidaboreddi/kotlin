@@ -1,0 +1,26 @@
+fun main() {
+    print("Enter any number:")
+    val num=readln().toLong()
+    val emoji="😀"
+    println(emoji)
+    if(emoji=="\uD83D\uDE00")
+    {
+        println("\uD83D\uDE00 \uD83D\uDE00 \uD83D\uDE00")
+    }
+    if(num.toInt() ==0)
+    {
+        println("You have entered Zero")
+    }
+    else if(num>0)
+    {
+        println("$num is a Positive Number")
+    }
+    else if(num<0)
+    {
+        println("$num is a Negative Number")
+    }
+    else
+    {
+        println("$num is invalid!!!!1")
+    }
+}
