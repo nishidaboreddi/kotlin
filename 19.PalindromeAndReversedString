@@ -1,8 +1,7 @@
 fun palindrome(str : String) : Boolean
 {
-    val str1=str.toLowerCase()
-    val str2=str1.reversed().replace(Regex("[^a-zA-Z0-9]"),"")
-    return str1==str2
+    val str2=str.toLowerCase().replace(Regex("[^a-zA-Z0-9]"),"")
+    return str2==str2.reversed()
 
 }
 
