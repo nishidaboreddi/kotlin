@@ -1,0 +1,9 @@
+fun negative(num : Int): Boolean=num<0
+
+
+fun main() {
+    print("Enter a number:")
+    val num=readln().toInt()
+    val status=negative(num)
+    println("Is $num negative? : $status")
+}
