@@ -1,0 +1,22 @@
+fun palindrome(str : String) : Boolean
+{
+    val str1=str.toLowerCase()
+    val str2=str1.reversed().replace(Regex("[^a-zA-Z0-9]"),"")
+    return str1==str2
+
+}
+
+fun main() {
+    print("Enter any string to reverse and check palindrome or not:")
+    val str=readln()
+    val str2=str.reversed()
+    println("Reversed string of $str=$str2")
+    if(palindrome(str))
+    {
+        println("$str is a palindrome")
+    }
+    else
+    {
+        println("$str is not a palindrome")
+    }
+}
