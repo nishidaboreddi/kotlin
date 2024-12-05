@@ -1,0 +1,22 @@
+
+
+fun smallestEle(numbers:Array<Int>,index : Int=0,min :Int= Int.MAX_VALUE ): Int
+{
+    if(index==numbers.size)
+    {
+        return min
+    }
+    else
+    {
+        val currentVal=numbers[index]
+        val updatedMin= if(currentVal<min) currentVal else min
+        return(smallestEle(numbers,index+1,updatedMin))
+    }
+}
+
+fun main()
+{
+    val numbers=arrayOf(1,2,3,4,5,34,0,-2,25)
+    val min=smallestEle(numbers)
+    println("Smallest in the array is: $min")
+}
