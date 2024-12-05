@@ -1,0 +1,26 @@
+fun digitSum(str : String, index : Int=0) : Int
+{
+    if(index==str.length)
+    {
+        return 0
+    }
+    val firstDigit=str[index]
+    val isDigit=firstDigit.isDigit()
+    return if(isDigit)
+      {
+        val digit=Character.getNumericValue(firstDigit)
+          digit+digitSum(str,index+1)
+
+      }
+    else
+    {
+        digitSum(str,index+1)
+    }
+}
+
+
+fun main() {
+    print("Enter any string with numbers included:")
+    val str=readln()
+    println("Sum of digits in $str = ${digitSum(str)}")
+}
