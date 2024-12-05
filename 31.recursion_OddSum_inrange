@@ -1,0 +1,26 @@
+fun oddSum(start : Int,end :Int): Int
+{
+    if(start>end)
+    {
+        return 0
+    }
+    else
+    {
+        if(start%2!=0)
+        {
+            return start+oddSum(start + 2,end)
+        }
+        else
+        {
+            return oddSum(start + 1,end)
+        }
+    }
+}
+
+fun main() {
+    print("Enter starting and ending of the range:")
+    val start=readln().toInt()
+    val end=readln().toInt()
+    val sum=oddSum(start,end)
+    println("The sum of numbers in range $start ... $end= $sum")
+}
