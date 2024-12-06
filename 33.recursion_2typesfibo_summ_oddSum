@@ -1,0 +1,142 @@
+fun nTermFibo(number : Int,index : Int=0,fiboSeries: MutableList<Int> = mutableListOf()): List<Int>
+{
+    //val fiboSeries=mutableListOf<Int>() // get output as list
+    if(index<number){
+        val term=fiboHealper(index)
+        //print("${term} ,")
+        fiboSeries.add(term)
+        return nTermFibo(number,index+1,fiboSeries)
+    }
+    else
+    {
+        return fiboSeries
+    }
+}
+
+fun fiboHealper(num : Int):Int
+{
+    if(num<=1)
+    {
+        return num
+    }
+    else
+    {
+        return fiboHealper(num-1)+ fiboHealper(num-2)
+    }
+}
+
+fun specificNumFibo(num :Int,index: Int =0,series:MutableList<Int> =mutableListOf()): List<Int>
+{
+    val term=fiboHealper(index)
+    if(term<=num)
+    {
+        series.add(term)
+        return specificNumFibo(num,index+1,series)
+    }
+    else
+    {
+        return series
+    }
+}
+
+
+fun sumFibo(op : Int,num:Int):Int
+
+{
+    var sum=0
+    if(op==1)
+    {
+        val series=nTermFibo(num)
+        for(term in series)
+        {
+            sum = sum+term
+        }
+        return sum
+    }
+    else if(op==2)
+    {
+        val series=specificNumFibo(num)
+        for(term in series)
+        {
+            sum=sum+term
+        }
+        return sum
+    }
+    else
+    {
+        return 0
+    }
+    return sum
+}
+
+fun oddSumFibo(op : Int,num:Int):Int
+
+{
+    var sum=0
+    if(op==1)
+    {
+        val series=nTermFibo(num)
+        for(term in series)
+        {
+            if(term%2!=0)
+            {
+                sum=sum+term
+            }
+        }
+        return sum
+    }
+    else if(op==2)
+    {
+        val series=specificNumFibo(num)
+        for(term in series)
+        {
+            if(term%2!=0)
+            {
+                sum=sum+term
+            }
+        }
+        return sum
+    }
+    else
+    {
+        return 0
+    }
+    return sum
+}
+
+
+
+
+fun main() {
+    print("Enter no.of terms:")
+    val num=readln().toInt()
+    print("Enter num to print series upto:")
+    val s_num=readln().toInt()
+    val series=nTermFibo(num)
+    println()
+    println("Fibonacci series: ${series}")
+   /* for ( term in series)
+    {
+        print("$term ")
+    }
+
+    */
+
+    println()
+    println("Fibonacci series upto term: ${specificNumFibo(s_num)}")
+
+    val n_sum=oddSumFibo(1,num)
+    val s_sum=oddSumFibo(2,s_num)
+
+    val nt_sum=sumFibo(1,num)
+    val st_sum=sumFibo(2,s_num)
+    
+    println()
+
+    println("sum of fibonacci in $num term = $nt_sum")
+    println("sum of fibonacci upto specified num $s_num = $st_sum")
+
+    println()
+    println("sum odd fibonacci in $num term = $n_sum")
+    println("sum odd fibonacci upto specified num $s_num = $s_sum")
+}
