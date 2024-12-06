@@ -1,0 +1,13 @@
+tailrec fun calculateFactorial(number: Int, accumulator: Long = 1): Long {
+    return if (number == 0) {
+        accumulator
+    } else {
+        calculateFactorial(number - 1, accumulator * number)
+    }
+}
+
+fun main() {
+    val number = 4
+    val factorial = calculateFactorial(number)
+    println("Factorial of $number: $factorial")
+}
