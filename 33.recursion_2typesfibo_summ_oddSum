@@ -140,3 +140,26 @@ fun main() {
     println("sum odd fibonacci in $num term = $n_sum")
     println("sum odd fibonacci upto specified num $s_num = $s_sum")
 }
+
+/* also
+
+fun sumEvenFibonacci(limit: Int): Int {
+    return sumEvenFibonacciHelper(0, 1, 0, limit)
+}
+
+fun sumEvenFibonacciHelper(prev: Int, current: Int, sum: Int, limit: Int): Int {
+    if (current > limit) {
+        return sum
+    }
+    
+    val newSum = if (current % 2 == 0) sum + current else sum
+    
+    return sumEvenFibonacciHelper(current, prev + current, newSum, limit)
+}
+
+fun main() {
+    val limit = 12
+    val sum = sumEvenFibonacci(limit)
+    println("Sum of even Fibonacci numbers up to $limit: $sum")
+}
+*/
