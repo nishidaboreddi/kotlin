@@ -1,0 +1,6 @@
+fun main() {
+    val numbers = listOf(1, 92, 3, 584, 55, 36, 37, 8, 19, 10)
+    val sorted = numbers.sortedByDescending { it }
+    println("Sorted List in Descending order:")
+    sorted.forEach { print("$it, ") }
+}
