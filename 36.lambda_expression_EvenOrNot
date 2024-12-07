@@ -1,0 +1,7 @@
+fun main() {
+    val isEven:(Int)->Boolean={num->num%2==0}
+    print("Enter any number :")
+    var num=readln().toInt()
+    val result=isEven(num)
+    println("$num is even ? : $result")
+}
