@@ -1,0 +1,53 @@
+fun main()
+{
+    /*
+ An anonymous function in Kotlin is a function that does not have a name.
+ It's a type of lambda function but is declared differently and explicitly.
+ Anonymous functions are often used when a piece of functionality needs to
+ be expressed as a function but doesn’t require a name. They are concise,
+ inline, and often used for short-lived purposes like event listeners or
+ callbacks.
+
+ val sum = fun(a: Int, b: Int): Int {
+    return a + b
+}
+
+Feature	 | Lambda	         |        Anonymous Function
+_________|___________________|____________________________________________
+Syntax	 | { a: Int, b: Int	 |  fun(a: Int, b: Int): Int { return a + b }
+         |   -> a + b }      |
+_________|___________________|____________________________________________
+ReturnType|	Inferred	     | Can be explicitly defined
+_________|___________________|____________________________________________
+return   | Refers to the 	 |     Refers to the anonymous function itself
+Behavior | enclosing function|
+
+Example of Lambda
+val multiply = { a: Int, b: Int -> a * b }
+println(multiply(3, 4)) // Output: 12
+
+
+Example of Ananymous function
+
+val multiply = fun(a: Int, b: Int): Int {
+    return a * b
+}
+println(multiply(3, 4)) // Output: 12
+
+ */
+
+        val isPalindrome= fun(str:String): Boolean  {
+            val cleanStr = str.lowercase().replace(Regex("[^a-zA-Z0-9]"), "")
+            return cleanStr == cleanStr.reversed()
+
+        }
+
+        val str1 = "Madam"
+        val str2 = "Kotlin"
+
+        println(isPalindrome(str1))
+        println( isPalindrome(str2))
+
+
+
+}
