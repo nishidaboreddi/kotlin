@@ -1,0 +1,6 @@
+fun main() {
+    val strings=listOf("one","two","three","four")
+    val uppercase=strings.map{it.toUpperCase()}
+    println("Uppercase list:")
+    uppercase.forEach{print("$it, ")}
+}
