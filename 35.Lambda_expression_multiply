@@ -1,0 +1,16 @@
+fun main() {
+    var multiply:(Int,Int)->Int={ a, b->a*b}
+    val set=arrayOf(1,2,3,4)
+    for(i in 0 until set.size)
+    {
+        for (j in i until set.size)
+        {
+            var result=multiply(set[i],set[j])
+            println("${set[i]}*${set[j]} = $result")
+        }
+    }
+
+    println()
+    println(set.map{it*it})
+
+}
